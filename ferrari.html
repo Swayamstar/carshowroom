@@ -1,0 +1,104 @@
+
+    .car-info p {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    a.back {
+      display: inline-block;<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ferrari Models - Star Cars</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #c00000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .car {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .car:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+    }
+
+    .car img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .car-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .car-info h2 {
+      margin: 10px 0;
+      color: #ffcc00;
+    }
+
+    a.back {
+      display: inline-block;
+      margin: 20px;
+      text-decoration: none;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>Ferrari Models</header>
+  <a class="back" href="WEBSITE.html">&larr; Back to Home</a>
+  <div class="container">
+    <div class="car">
+      <img src="fre1.jpg" alt="Ferrari F8">
+      <div class="car-info">
+        <h2>Ferrari F8 Tributo</h2>
+        <p>720 HP twin-turbo V8, 0–100 km/h in 2.9s, sleek aerodynamics.</p>
+      </div>
+    </div>
+    <div class="car">
+      <img src="fre2.jpg" alt="Ferrari SF90">
+      <div class="car-info">
+        <h2>Ferrari SF90 Stradale</h2>
+        <p>Plug-in hybrid, 986 HP, futuristic design and innovation.</p>
+      </div>
+    </div>
+    <div class="car">
+      <img src="fre3.jpg" alt="Ferrari 812">
+      <div class="car-info">
+        <h2>Ferrari 812 Superfast</h2>
+        <p>6.5L V12 engine, 800 HP, top-tier grand touring experience.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

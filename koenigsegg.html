@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koenigsegg Models - Star Cars</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .car {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .car:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+    }
+
+    .car img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .car-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .car-info h2 {
+      margin: 10px 0;
+      color: #00ccff;
+    }
+
+    .car-info p {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    a.back {
+      display: inline-block;
+      margin: 20px;
+      text-decoration: none;
+      color: #00ccff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>Koenigsegg Models</header>
+  <a class="back" href="WEBSITE.html">&larr; Back to Home</a>
+  <div class="container">
+    <div class="car">
+      <img src="k1.jpg" alt="Koenigsegg Agera RS">
+      <div class="car-info">
+        <h2>Agera RS</h2>
+        <p>World record speed car, 1,341 HP, 447 km/h top speed.</p>
+      </div>
+    </div>
+    <div class="car">
+      <img src="konigsegg.jpg" alt="Koenigsegg Jesko">
+      <div class="car-info">
+        <h2>Jesko</h2>
+        <p>Ultimate track performance, 1,600 HP, Light Speed Transmission.</p>
+      </div>
+    </div>
+    <div class="car">
+      <img src="k2.jpg" alt="Koenigsegg Regera">
+      <div class="car-info">
+        <h2>Regera</h2>
+        <p>Hybrid hypercar, Direct Drive, luxury and raw power combined.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

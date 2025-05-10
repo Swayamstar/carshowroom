@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let inputB = parseInt(prompt("enter value of b"));
+        let inputA = parseInt(prompt("enter value of a"));
+        let input = prompt("enter the operator");
+        
+        function add(a, b) {
+            console.log(a + b);
+        }
+        function sub(a, b) {
+            console.log(a - b);
+        } 
+        function multi(a, b) {
+            console.log(a * b);
+        }
+        function div(a, b) {
+            console.log(a / b);
+        }
+
+        if (input == '+') {
+            add(inputA, inputB);
+        } else if (input == '-') {
+            sub(inputA, inputB);
+        } else if (input == '*') {
+            multi(inputA, inputB);
+        } else if (input == '/') {
+            if(inputB!=0){
+            div(inputA, inputB);}
+            else{
+                console.log("nt divisible by 0");
+            }
+        } else {
+            console.log("Invalid operator");
+        }
+    </script>
+</body>
+</html>

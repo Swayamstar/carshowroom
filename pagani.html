@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pagani Models - Star Cars</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #444;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .car {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(180, 180, 180, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .car:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(200, 200, 200, 0.6);
+    }
+
+    .car img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .car-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .car-info h2 {
+      margin: 10px 0;
+      color: #dddddd;
+    }
+
+    .car-info p {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    a.back {
+      display: inline-block;
+      margin: 20px;
+      text-decoration: none;
+      color: #aaa;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>Pagani Models</header>
+  <a class="back" href="WEBSITE.html">&larr; Back to Home</a>
+  <div class="container">
+    <div class="car">
+      <img src="P1.jpg" alt="Pagani Huayra">
+      <div class="car-info">
+        <h2>Pagani Huayra</h2>
+        <p>AMG V12 twin-turbo, carbon-titanium body, active aero.</p>
+      </div>
+    </div>
+    <div class="car">
+      <img src="P2.jpg" alt="Pagani Zonda">
+      <div class="car-info">
+        <h2>Pagani Zonda R</h2>
+        <p>Track monster, 750 HP V12, extreme aerodynamics and styling.</p>
+      </div>
+    </div>
+    <div class="car">
+      <img src="P3.jpg" alt="Pagani Roadster">
+      <div class="car-info">
+        <h2>Pagani Huayra Roadster</h2>
+        <p>Open-top beauty, handcrafted details, luxurious and raw.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

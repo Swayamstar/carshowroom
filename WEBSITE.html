@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Star Cars Showroom</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.light-mode {
+      background-color: #f5f5f5;
+      color: #111;
+    }
+
+    header {
+      background: linear-gradient(to right, #000000, #1c1c1c);
+      padding: 20px;
+      text-align: center;
+      font-size: 2.5em;
+      color: #ffcc00;
+      font-weight: bold;
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    body.light-mode header {
+      background: linear-gradient(to right, #ffffff, #e0e0e0);
+      color: #222;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #111;
+      padding: 10px;
+    }
+
+    body.light-mode nav {
+      background-color: #ddd;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      padding: 10px;
+      transition: color 0.3s;
+    }
+
+    body.light-mode nav a {
+      color: #333;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    #search {
+      text-align: center;
+      margin: 20px;
+    }
+
+    #search input {
+      padding: 10px;
+      width: 60%;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .car {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    body.light-mode .car {
+      background-color: #eee;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .car:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(255, 204, 0, 0.5);
+    }
+
+    .car img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .car-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .car-info h2 {
+      margin: 10px 0;
+      font-size: 1.5em;
+      color: #ffcc00;
+    }
+
+    body.light-mode .car-info h2 {
+      color: #cc8800;
+    }
+
+    .car-info p {
+      color: #ccc;
+    }
+
+    body.light-mode .car-info p {
+      color: #444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      color: #888;
+      margin-top: 50px;
+    }
+
+    body.light-mode footer {
+      background-color: #ddd;
+      color: #555;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+      max-width: 500px;
+    }
+
+    .modal img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .close-btn {
+      background: #ffcc00;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 600px) {
+      #search input {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>STAR CARS SHOWROOM</header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Models</a>
+    <a href="#">Contact Us</a>
+    <a href="#" id="toggleMode">Dark/Light</a>
+  </nav>
+
+  <div id="search">
+    <input type="text" id="searchInput" placeholder="Search car brands...">
+  </div>
+
+  <div class="gallery" id="carGallery">
+    <!-- Cars will be loaded here -->
+  </div>
+
+  <div class="modal" id="carModal">
+    <div class="modal-content">
+      <img id="modalImg" src="" alt="Car Image">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Star Cars. All rights reserved.
+  </footer>
+
+  <script>
+    const cars = [
+      {
+        brand: "Ferrari",
+        image: "ferrari.jpg",
+        description: "Italian luxury sports car known for speed and elegance.",
+        link: "ferrari.html"
+      },
+      {
+        brand: "Bugatti",
+        image: "buggati.jpg",
+        description: "World-renowned hypercar for ultimate performance.",
+        link: "bugatti.html"
+      },
+      {
+        brand: "Pagani",
+        image: "pagani.jpg",
+        description: "Exquisite Italian engineering meets cutting-edge design.",
+        link: "pagani.html"
+      },
+      {
+        brand: "Jaguar",
+        image: "jaguar.jpg",
+        description: "British luxury and sports performance combined.",
+        link: "jaguar.html"
+      },
+      {
+        brand: "Koenigsegg",
+        image: "konigsegg.jpg",
+        description: "Swedish hypercars pushing automotive limits.",
+        link: "koenigsegg.html"
+      }
+    ];
+
+    const gallery = document.getElementById("carGallery");
+    const searchInput = document.getElementById("searchInput");
+
+    function loadCars(filter = "") {
+      gallery.innerHTML = "";
+      cars.filter(car => car.brand.toLowerCase().includes(filter.toLowerCase()))
+        .forEach(car => {
+          const card = document.createElement("div");
+          card.className = "car";
+          card.innerHTML = `
+            <img src="${car.image}" alt="${car.brand}">
+            <div class="car-info">
+              <h2>${car.brand}</h2>
+              <p>${car.description}</p>
+            </div>`;
+          card.onclick = () => {
+            window.location.href = car.link;
+          };
+          gallery.appendChild(card);
+        });
+    }
+
+    function closeModal() {
+      document.getElementById("carModal").style.display = "none";
+    }
+
+    searchInput.addEventListener("input", () => {
+      loadCars(searchInput.value);
+    });
+
+    document.getElementById("toggleMode").addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+    });
+
+    loadCars();
+  </script>
+</body>
+</html>

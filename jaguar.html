@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaguar Models - Star Cars</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2b2b2b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .car {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(100, 100, 100, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .car:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(200, 200, 200, 0.6);
+    }
+
+    .car img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .car-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .car-info h2 {
+      margin: 10px 0;
+      color: #66ffcc;
+    }
+
+    .car-info p {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    a.back {
+      display: inline-block;
+      margin: 20px;
+      text-decoration: none;
+      color: #66ffcc;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>Jaguar Models</header>
+  <a class="back" href="WEBSITE.html">&larr; Back to Home</a>
+  <div class="container">
+    <div class="car">
+      <img src="j1.jpg" alt="Jaguar F-Type">
+      <div class="car-info">
+        <h2>Jaguar F-Type</h2>
+        <p>Elegant coupe and convertible, supercharged V8 performance.</p>
+      </div>
+    </div>
+    <div class="car">
+      <img src="J2.jpg" alt="Jaguar XE">
+      <div class="car-info">
+        <h2>Jaguar XE</h2>
+        <p>Luxury sedan, efficient engines, sleek and sporty design.</p>
+      </div>
+    </div>
+    <div class="car">
+      <img src="j3.jpg" alt="Jaguar I-Pace">
+      <div class="car-info">
+        <h2>Jaguar I-Pace</h2>
+        <p>All-electric SUV, futuristic interior, high performance EV.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
